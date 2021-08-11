@@ -5,6 +5,7 @@
 
 namespace TryCatch.Patterns.Results
 {
+    using System;
     using TryCatch.Validators;
 
     /// <summary>
@@ -12,7 +13,6 @@ namespace TryCatch.Patterns.Results
     /// </summary>
     /// <typeparam name="TPayload">Type of payload associated with the operation.</typeparam>
     public class ResultBuilder<TPayload> : IResultBuilder<TPayload>
-        where TPayload : class
     {
         private Result<TPayload> result;
 
@@ -49,7 +49,10 @@ namespace TryCatch.Patterns.Results
         {
             this.ThrowIfResultIsNotBuildBefore();
 
-            ArgumentsValidator.ThrowIfIsNull(payload, nameof(payload));
+            if (payload is null)
+            {
+                throw new ArgumentNullException(nameof(payload));
+            }
 
             this.result.Payload = payload;
 

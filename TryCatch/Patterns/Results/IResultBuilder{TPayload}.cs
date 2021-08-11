@@ -13,7 +13,6 @@ namespace TryCatch.Patterns.Results
     /// </summary>
     /// <typeparam name="TPayload">Type of payload associated with the operation.</typeparam>
     public interface IResultBuilder<TPayload> : IBuilder<Result<TPayload>, IResultBuilder<TPayload>>
-        where TPayload : class
     {
         /// <summary>
         /// Allows setting the operation payload data.
