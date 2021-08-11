@@ -119,5 +119,47 @@ namespace TryCatch.UnitTests.Patterns.Results
             actual.Errors.Should().Be(message);
             actual.Payload.Should().BeNull();
         }
+
+        [Fact]
+        public void Construct_with_struct_payload()
+        {
+            // Act
+            var actual = new Result<bool>();
+
+            // Asserts
+            actual.IsSucceeded.Should().BeTrue();
+            actual.Errors.Should().BeEmpty();
+            actual.Payload.Should().Be(default(bool));
+        }
+
+        [Fact]
+        public void Construct_with_struct_payload_with_message()
+        {
+            // Arrange
+            const string message = "set-message";
+
+            // Act
+            var actual = new Result<bool>(message);
+
+            // Asserts
+            actual.IsSucceeded.Should().BeFalse();
+            actual.Errors.Should().Be(message);
+            actual.Payload.Should().Be(default(bool));
+        }
+
+        [Fact]
+        public void Construct_with_struct_payload_with_payload()
+        {
+            // Arrange
+            const bool payload = true;
+
+            // Act
+            var actual = new Result<bool>(payload);
+
+            // Asserts
+            actual.IsSucceeded.Should().BeTrue();
+            actual.Errors.Should().BeEmpty();
+            actual.Payload.Should().Be(payload);
+        }
     }
 }
