@@ -13,7 +13,6 @@ namespace TryCatch.Patterns.Specifications.Linq
     /// </summary>
     /// <typeparam name="TEntity">Entity type used on specifications over that queries to run.</typeparam>
     public abstract class CompositeSpecification<TEntity> : ILinqSpecification<TEntity>
-        where TEntity : class
     {
         /// <inheritdoc/>
         public ISpecification<TEntity> And(ISpecification<TEntity> other) => new AndSpecification<TEntity>(this, other);

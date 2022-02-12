@@ -11,7 +11,7 @@ namespace TryCatch.Patterns.Results
     /// Represents a standard structure of the results of a paged query.
     /// </summary>
     /// <typeparam name="TEntity">Type of the entity.</typeparam>
-    public class PageResult<TEntity>
+    public sealed class PageResult<TEntity>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="PageResult{TEntity}"/> class.

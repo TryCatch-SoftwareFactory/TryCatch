@@ -1,9 +1,9 @@
-﻿// <copyright file="ILinqQueryRepository{TEntity}.cs" company="TryCatch Software Factory">
+﻿// <copyright file="IReadingRepository{TEntity}.cs" company="TryCatch Software Factory">
 // Copyright © TryCatch Software Factory All rights reserved.
 // Licensed under the MIT license. See LICENSE.md file in the project root for full license information.
 // </copyright>
 
-namespace TryCatch.Patterns.Repositories
+namespace TryCatch.Patterns.Repositories.Linq
 {
     using System;
     using System.Collections.Generic;
@@ -12,11 +12,10 @@ namespace TryCatch.Patterns.Repositories
     using System.Threading.Tasks;
 
     /// <summary>
-    /// Linq query repository interface for TEntity.
+    /// Reading repository interface for TEntity.
     /// </summary>
     /// <typeparam name="TEntity">Type of entity.</typeparam>
-    public interface ILinqQueryRepository<TEntity>
-        where TEntity : class
+    public interface IReadingRepository<TEntity>
     {
         /// <summary>
         /// Gets Entity by criteria filter.

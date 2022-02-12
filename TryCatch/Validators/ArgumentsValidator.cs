@@ -20,7 +20,6 @@ namespace TryCatch.Validators
         /// <param name="message">Error message.</param>
         /// <exception cref="ArgumentNullException">It is thrown if the component is null.</exception>
         public static void ThrowIfIsNull<T>(T component, string message = "")
-            where T : class
         {
             if (component is null)
             {

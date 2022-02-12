@@ -1,9 +1,9 @@
-﻿// <copyright file="ISpecQueryRepository{TEntity}.cs" company="TryCatch Software Factory">
+﻿// <copyright file="IReadingRepository{TEntity}.cs" company="TryCatch Software Factory">
 // Copyright © TryCatch Software Factory All rights reserved.
 // Licensed under the MIT license. See LICENSE.md file in the project root for full license information.
 // </copyright>
 
-namespace TryCatch.Patterns.Repositories
+namespace TryCatch.Patterns.Repositories.Spec
 {
     using System.Collections.Generic;
     using System.Threading;
@@ -11,11 +11,10 @@ namespace TryCatch.Patterns.Repositories
     using TryCatch.Patterns.Specifications;
 
     /// <summary>
-    /// Query repository interface for TEntity with Specification pattern.
+    /// Reading repository interface for TEntity with Specification pattern.
     /// </summary>
     /// <typeparam name="TEntity">Type of entity.</typeparam>
-    public interface ISpecQueryRepository<TEntity>
-        where TEntity : class
+    public interface IReadingRepository<TEntity>
     {
         /// <summary>
         /// Gets Entity by criteria filter.

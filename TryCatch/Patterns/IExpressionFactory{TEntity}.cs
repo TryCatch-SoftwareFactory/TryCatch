@@ -13,7 +13,6 @@ namespace TryCatch.Patterns
     /// </summary>
     /// <typeparam name="TEntity">Type of entity linked with the linq expression.</typeparam>
     public interface IExpressionFactory<TEntity>
-        where TEntity : class
     {
         /// <summary>
         /// Gets a linq expressions for the filter object.

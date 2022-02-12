@@ -12,7 +12,7 @@ namespace TryCatch.Models
     /// <summary>
     /// Represents a standard model for paging queries.
     /// </summary>
-    public class PageModel
+    public sealed class PageModel
     {
         private readonly string[] sortAsValidValues = new[]
         {
@@ -56,24 +56,24 @@ namespace TryCatch.Models
         }
 
         /// <summary>
-        /// Gets or sets the size of the query.
+        /// Gets the size of the query.
         /// </summary>
-        public int Limit { get; set; }
+        public int Limit { get; }
 
         /// <summary>
-        /// Gets or sets the offset to be applied in the query.
+        /// Gets the offset to be applied in the query.
         /// </summary>
-        public int Offset { get; set; }
+        public int Offset { get; }
 
         /// <summary>
-        /// Gets or sets the field name used as sort criteria.
+        /// Gets the field name used as sort criteria.
         /// </summary>
-        public string OrderBy { get; set; }
+        public string OrderBy { get; }
 
         /// <summary>
-        /// Gets or sets the sort mode [ASC|DESC].
+        /// Gets the sort mode [ASC|DESC].
         /// </summary>
-        public string SortAs { get; set; }
+        public string SortAs { get; }
 
         /// <summary>
         /// Indicates if the query must be sorted as ascending.

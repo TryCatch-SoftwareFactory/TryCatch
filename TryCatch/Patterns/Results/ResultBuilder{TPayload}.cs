@@ -12,7 +12,7 @@ namespace TryCatch.Patterns.Results
     /// Implementation of the operation - with payload - result builder.
     /// </summary>
     /// <typeparam name="TPayload">Type of payload associated with the operation.</typeparam>
-    public class ResultBuilder<TPayload> : IResultBuilder<TPayload>
+    public sealed class ResultBuilder<TPayload> : IResultBuilder<TPayload>
     {
         private Result<TPayload> result;
 

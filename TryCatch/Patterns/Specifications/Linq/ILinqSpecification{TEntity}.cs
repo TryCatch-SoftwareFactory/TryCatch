@@ -13,7 +13,6 @@ namespace TryCatch.Patterns.Specifications.Linq
     /// </summary>
     /// <typeparam name="TEntity">Entity type used on specifications over that queries to run.</typeparam>
     public interface ILinqSpecification<TEntity> : ISpecification<TEntity>
-        where TEntity : class
     {
         /// <summary>
         /// Gets a LINQ expression with all specs about the filtering.

@@ -11,7 +11,7 @@ namespace TryCatch.Patterns.Results
     /// <summary>
     /// Implementation of IResultBuilder. Allows getting the more common result builders.
     /// </summary>
-    public class ResultBuilderFactory : IResultBuilderFactory
+    public sealed class ResultBuilderFactory : IResultBuilderFactory
     {
         private readonly IServiceProvider serviceProvider;
 
@@ -31,11 +31,11 @@ namespace TryCatch.Patterns.Results
         public IOpResultBuilder GetOperationResultBuilder() => this.serviceProvider.GetService(typeof(IOpResultBuilder)) as IOpResultBuilder;
 
         /// <inheritdoc/>
-        public IPageResultBuilder<TEntity> GetPageResultBuilder<TEntity>()
-            where TEntity : class => this.serviceProvider.GetService(typeof(IPageResultBuilder<TEntity>)) as IPageResultBuilder<TEntity>;
+        public IPageResultBuilder<TEntity> GetPageResultBuilder<TEntity>() =>
+            this.serviceProvider.GetService(typeof(IPageResultBuilder<TEntity>)) as IPageResultBuilder<TEntity>;
 
         /// <inheritdoc/>
-        public IResultBuilder<TPayload> GetPayloadResultBuilder<TPayload>()
-            where TPayload : class => this.serviceProvider.GetService(typeof(IResultBuilder<TPayload>)) as IResultBuilder<TPayload>;
+        public IResultBuilder<TPayload> GetPayloadResultBuilder<TPayload>() =>
+            this.serviceProvider.GetService(typeof(IResultBuilder<TPayload>)) as IResultBuilder<TPayload>;
     }
 }

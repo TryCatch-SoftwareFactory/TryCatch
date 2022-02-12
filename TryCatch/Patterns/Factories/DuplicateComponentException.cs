@@ -10,7 +10,7 @@ namespace TryCatch.Patterns.Factories
     /// <summary>
     /// Represents duplicate component exception that occurs when register process fails.
     /// </summary>
-    public class DuplicateComponentException : Exception
+    public sealed class DuplicateComponentException : Exception
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="DuplicateComponentException"/> class.

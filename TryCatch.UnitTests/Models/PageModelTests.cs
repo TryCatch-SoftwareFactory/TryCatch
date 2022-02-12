@@ -5,7 +5,6 @@
 
 namespace TryCatch.UnitTests.Models
 {
-    using System;
     using FluentAssertions;
     using TryCatch.Models;
     using Xunit;

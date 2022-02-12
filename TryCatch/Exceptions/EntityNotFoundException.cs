@@ -10,7 +10,7 @@ namespace TryCatch.Exceptions
     /// <summary>
     /// Represents errors that occur when entity is not found.
     /// </summary>
-    public class EntityNotFoundException : Exception
+    public sealed class EntityNotFoundException : Exception
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="EntityNotFoundException"/> class.

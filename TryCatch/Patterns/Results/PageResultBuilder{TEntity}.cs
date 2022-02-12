@@ -5,7 +5,6 @@
 
 namespace TryCatch.Patterns.Results
 {
-    using System;
     using System.Collections.Generic;
     using TryCatch.Validators;
 
@@ -13,7 +12,7 @@ namespace TryCatch.Patterns.Results
     /// Implementation of the Pagination query result builder.
     /// </summary>
     /// <typeparam name="TEntity">Type of entities associated with the query.</typeparam>
-    public class PageResultBuilder<TEntity> : IPageResultBuilder<TEntity>
+    public sealed class PageResultBuilder<TEntity> : IPageResultBuilder<TEntity>
     {
         private PageResult<TEntity> pageResult;
 

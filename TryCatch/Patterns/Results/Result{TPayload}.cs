@@ -12,7 +12,7 @@ namespace TryCatch.Patterns.Results
     /// Represents a generic operation result with payload data.
     /// </summary>
     /// <typeparam name="TPayload">Type of payload data.</typeparam>
-    public class Result<TPayload>
+    public sealed class Result<TPayload>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Result{TPayload}"/> class.
@@ -21,7 +21,7 @@ namespace TryCatch.Patterns.Results
         {
             this.Errors = string.Empty;
 
-            this.Payload = default(TPayload);
+            this.Payload = default;
         }
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace TryCatch.Patterns.Results
 
             this.Errors = errors;
 
-            this.Payload = default(TPayload);
+            this.Payload = default;
         }
 
         /// <summary>

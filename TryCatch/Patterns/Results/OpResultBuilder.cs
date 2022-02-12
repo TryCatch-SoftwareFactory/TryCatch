@@ -10,7 +10,7 @@ namespace TryCatch.Patterns.Results
     /// <summary>
     /// Implementation of the operation result builder.
     /// </summary>
-    public class OpResultBuilder : IOpResultBuilder
+    public sealed class OpResultBuilder : IOpResultBuilder
     {
         private OpResult opResult;
 
