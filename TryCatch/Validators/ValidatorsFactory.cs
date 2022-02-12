@@ -11,8 +11,8 @@ namespace TryCatch.Validators
     /// <summary>
     /// Abstract base class to implement a factory for the validators creation process. Allows getting validators through their keys associated previously.
     /// You must define the key-value dictionary on the constructor using the Register method (protected).
-    ///
-    /// Example:
+    /// </summary>
+    /// <example>
     ///
     ///     public MyValidatorsFactory(IServiceProvider serviceProvider) : base(serviceProvider)
     ///     {
@@ -20,7 +20,7 @@ namespace TryCatch.Validators
     ///         this.RegisterType("car-updating", typeof(ICarUpdatingValidator));
     ///     }.
     ///
-    /// </summary>
+    /// </example>
     public abstract class ValidatorsFactory : AbstractFactory, IValidatorsFactory
     {
         /// <summary>
@@ -39,13 +39,11 @@ namespace TryCatch.Validators
         /// <param name="validatorKey">Associated key.</param>
         /// <exception cref="ArgumentException">It is thrown if the validatorKey is null, empty or whitespace.</exception>
         /// <returns>A <see cref="IValidator"/> reference to the requested validator.</returns>
-        public IValidator GetValidator(string validatorKey)
+        public virtual IValidator GetValidator(string validatorKey)
         {
             ArgumentsValidator.ThrowIfIsNullEmptyOrWhiteSpace(validatorKey);
 
-            var validator = this.GetType(validatorKey) as IValidator;
-
-            if (validator is null)
+            if (!(this.GetType(validatorKey) is IValidator validator))
             {
                 throw new ValidatorNotFoundException($"Not found validator for key: {validatorKey}.");
             }

@@ -8,21 +8,20 @@ namespace TryCatch.Patterns.Builders
     /// <summary>
     /// Representation of the builder pattern through a generic interface. Allow building a TComponent instance with more complexity than
     /// with a basic constructor.Only define to basic methods - build and create - whose mission is to create a base instance of TComponent (build method)
-    /// and return the reference(create method). Ref: https://en.wikipedia.org/wiki/Builder_pattern
-    ///
-    /// Example:
-    ///
-    /// // another operations...
-    /// var builder = sp.GetService(typeof(MyCarBuilder)) as MyCarBuilder;
-    /// // resolve the complex construction
-    /// var car = builder.build().withV12Engine().withBlackColor().withStickers().Create();
-    /// // more operations...
-    ///
+    /// and return the reference(create method). Ref: https://en.wikipedia.org/wiki/Builder_pattern .
     /// </summary>
+    /// <example>
+    ///
+    ///     // another operations...
+    ///     var builder = sp.GetService(typeof(MyCarBuilder)) as MyCarBuilder;
+    ///     // resolve the complex construction
+    ///     var car = builder.build().withV12Engine().withBlackColor().withStickers().Create();
+    ///     // more operations...
+    ///
+    /// </example>
     /// <typeparam name="TComponent">Type of component to build.</typeparam>
     /// <typeparam name="TConcreteBuilder">Type of concrete builder to implement.</typeparam>
     public interface IBuilder<TComponent, TConcreteBuilder>
-        where TComponent : class
         where TConcreteBuilder : IBuilder<TComponent, TConcreteBuilder>
     {
         /// <summary>

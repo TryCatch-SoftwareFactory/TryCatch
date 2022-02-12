@@ -10,7 +10,7 @@ namespace TryCatch.Patterns.Factories
     /// <summary>
     /// Represents errors that occur when the service provider don't find the implementation for the interface requested.
     /// </summary>
-    public class ComponentNotFoundException : Exception
+    public sealed class ComponentNotFoundException : Exception
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ComponentNotFoundException"/> class.

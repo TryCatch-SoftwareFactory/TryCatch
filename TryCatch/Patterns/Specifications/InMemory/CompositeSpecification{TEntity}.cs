@@ -11,7 +11,6 @@ namespace TryCatch.Patterns.Specifications.InMemory
     /// </summary>
     /// <typeparam name="TEntity">Entity type used on specifications over that queries to run.</typeparam>
     public abstract class CompositeSpecification<TEntity> : ISpecification<TEntity>
-        where TEntity : class
     {
         /// <inheritdoc/>
         public ISpecification<TEntity> And(ISpecification<TEntity> other) => new AndSpecification<TEntity>(this, other);

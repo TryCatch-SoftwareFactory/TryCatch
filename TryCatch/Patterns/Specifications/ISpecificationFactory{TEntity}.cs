@@ -10,7 +10,6 @@ namespace TryCatch.Patterns.Specifications
     /// </summary>
     /// <typeparam name="TEntity">Type of entity linked with the query specifications.</typeparam>
     public interface ISpecificationFactory<TEntity>
-        where TEntity : class
     {
         /// <summary>
         /// Gets a query specification for the filter object.

@@ -15,7 +15,6 @@ namespace TryCatch.Patterns.Specifications
     /// </summary>
     /// <typeparam name="TEntity">Entity type used on specifications over that queries to run.</typeparam>
     public interface ISpecification<TEntity>
-        where TEntity : class
     {
         /// <summary>
         /// Indicates if the spec is satisfied for the candidate.

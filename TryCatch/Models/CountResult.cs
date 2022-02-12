@@ -7,13 +7,23 @@ namespace TryCatch.Models
 {
     using System;
 
-    public class CountResult
+    /// <summary>
+    /// Represents the result of an element enumeration operation.
+    /// </summary>
+    public sealed class CountResult
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CountResult"/> class.
+        /// </summary>
         public CountResult()
         {
             this.Count = DefaultValues.DefaultCount;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CountResult"/> class.
+        /// </summary>
+        /// <param name="count">The number of items matched.</param>
         public CountResult(long count = DefaultValues.DefaultCount)
         {
             if (count < 0)
@@ -24,6 +34,9 @@ namespace TryCatch.Models
             this.Count = count;
         }
 
+        /// <summary>
+        /// Gets the number of items matched.
+        /// </summary>
         public long Count { get; }
     }
 }

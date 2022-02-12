@@ -15,7 +15,6 @@ namespace TryCatch.Patterns.Specifications.Linq
     /// </summary>
     /// <typeparam name="TEntity">Entity type used on specifications over that queries to run.</typeparam>
     public sealed class OrSpecification<TEntity> : CompositeSpecification<TEntity>
-        where TEntity : class
     {
         private readonly ISpecification<TEntity> left;
 

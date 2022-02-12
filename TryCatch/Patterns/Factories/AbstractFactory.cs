@@ -19,14 +19,15 @@ namespace TryCatch.Patterns.Factories
     ///
     /// You can read more about the importance and use of AbstractFactory pattern on: https://en.wikipedia.org/wiki/Abstract_factory_pattern.
     ///
-    /// Example:
+    /// </summary>
+    /// <example>
     ///
     ///     public MyFactory(IServiceProvider serviceProvider) : base(serviceProvider)
     ///     {
     ///         this.RegisterType(typeof(AddTaskToDo), typeof(IAddTaskToDoHandler));
     ///     }.
     ///
-    /// </summary>
+    /// </example>
     public abstract class AbstractFactory
     {
         private readonly IServiceProvider serviceProvider;
@@ -57,7 +58,7 @@ namespace TryCatch.Patterns.Factories
         /// <exception cref="ArgumentNullException">It is thrown if any of the arguments are null.</exception>
         /// <exception cref="DuplicateComponentException">It is thrown if the key used in the current relationship was previously registered.</exception>
         /// <returns>Indicates if the register was succeeded.</returns>
-        protected bool RegisterType<TInput, TOutput>(TInput input, TOutput output)
+        protected virtual bool RegisterType<TInput, TOutput>(TInput input, TOutput output)
             where TInput : Type
             where TOutput : Type
         {
@@ -86,7 +87,7 @@ namespace TryCatch.Patterns.Factories
         /// <exception cref="ArgumentNullException">It is thrown if the output is null.</exception>
         /// <exception cref="DuplicateComponentException">It is thrown if the key used in the current relationship was previously registered.</exception>
         /// <returns>Indicates if the register was succeeded.</returns>
-        protected bool RegisterType<TOutput>(string key, TOutput output)
+        protected virtual bool RegisterType<TOutput>(string key, TOutput output)
             where TOutput : Type
         {
             ArgumentsValidator.ThrowIfIsNullEmptyOrWhiteSpace(key);
@@ -110,7 +111,7 @@ namespace TryCatch.Patterns.Factories
         /// <exception cref="ArgumentNullException">It is thrown if the input is null.</exception>
         /// <exception cref="ComponentNotFoundException">It is thrown if the component is not registered yet.</exception>
         /// <returns>A <see cref="object"/> reference to the instance of component associated with the type used as an argument.</returns>
-        protected object GetType<TInput>(TInput input)
+        protected virtual object GetType<TInput>(TInput input)
             where TInput : Type
         {
             ArgumentsValidator.ThrowIfIsNull(input, nameof(input));
@@ -140,7 +141,7 @@ namespace TryCatch.Patterns.Factories
         /// <param name="key">Key used on the relation to resolve.</param>
         /// <exception cref="ArgumentException">It is thrown if the key is null, empty or whitespace.</exception>
         /// <returns>A <see cref="object"/> reference to the instance of component associated with the type used as an argument.</returns>
-        protected object GetType(string key)
+        protected virtual object GetType(string key)
         {
             ArgumentsValidator.ThrowIfIsNullEmptyOrWhiteSpace(key);
 

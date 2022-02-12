@@ -1,9 +1,9 @@
-﻿// <copyright file="ILinqRepository{TEntity}.cs" company="TryCatch Software Factory">
+﻿// <copyright file="IRepository{TEntity}.cs" company="TryCatch Software Factory">
 // Copyright © TryCatch Software Factory All rights reserved.
 // Licensed under the MIT license. See LICENSE.md file in the project root for full license information.
 // </copyright>
 
-namespace TryCatch.Patterns.Repositories
+namespace TryCatch.Patterns.Repositories.Linq
 {
     using System;
     using System.Collections.Generic;
@@ -12,11 +12,10 @@ namespace TryCatch.Patterns.Repositories
     using System.Threading.Tasks;
 
     /// <summary>
-    /// The generic repository pattern interface based on linq as a mechanism for query filtering.
+    /// The repository pattern interface based on linq as a mechanism for query filtering.
     /// </summary>
     /// <typeparam name="TEntity">Type of entity used in the repository.</typeparam>
-    public interface ILinqRepository<TEntity>
-        where TEntity : class
+    public interface IRepository<TEntity>
     {
         /// <summary>
         /// Add the entity to the repository.
@@ -25,16 +24,7 @@ namespace TryCatch.Patterns.Repositories
         /// <param name="cancellationToken">A <see cref="CancellationToken"/> reference to the cancellation token.</param>
         /// <exception cref="ArgumentNullException">It is thrown if the entity is null.</exception>
         /// <returns>A <see cref="Task{bool}"/> representing the asynchronous operation with a success flag.</returns>
-        Task<bool> AddAsync(TEntity entity, CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Adds the list of entities to the repository.
-        /// </summary>
-        /// <param name="entities">A <see cref="IEnumerable{TEntity}"/> reference to the list of <see cref="TEntity"/>.</param>
-        /// <param name="cancellationToken">A <see cref="CancellationToken"/> reference to the cancellation token.</param>
-        /// <exception cref="ArgumentNullException">It is thrown if the entities collection is null.</exception>
-        /// <returns>A <see cref="Task{bool}"/> representing the asynchronous operation with a success flag.</returns>
-        Task<bool> AddAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default);
+        Task<bool> CreateAsync(TEntity entity, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update the entity or create a new if it not exists.
@@ -43,7 +33,7 @@ namespace TryCatch.Patterns.Repositories
         /// <param name="cancellationToken">A <see cref="CancellationToken"/> reference to the cancellation token.</param>
         /// <exception cref="ArgumentNullException">It is thrown if the entity is null.</exception>
         /// <returns>A <see cref="Task{bool}"/> representing the asynchronous operation with a success flag.</returns>
-        Task<bool> AddOrUpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
+        Task<bool> CreateOrUpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete the entity from the repository.
@@ -55,20 +45,11 @@ namespace TryCatch.Patterns.Repositories
         Task<bool> DeleteAsync(TEntity entity, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Deletes the list of entities from the repository.
-        /// </summary>
-        /// <param name="entities">A <see cref="IEnumerable{TEntity}"/> reference to the list of <see cref="TEntity"/>.</param>
-        /// <param name="cancellationToken">A <see cref="CancellationToken"/> reference to the cancellation token.</param>
-        /// <exception cref="ArgumentNullException">It is thrown if the entities collection is null.</exception>
-        /// <returns>A <see cref="Task{bool}"/> representing the asynchronous operation with a success flag.</returns>
-        Task<bool> DeleteAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default);
-
-        /// <summary>
         /// Gets a reference to a first entity that matches with the where criteria passed as argument.
         /// </summary>
         /// <param name="spec">A <see cref="Expression{Func{TEntity, bool}}"/> referentes to the where criteria.</param>
         /// <param name="cancellationToken">A <see cref="CancellationToken"/> reference to the cancellation token.</param>
-        /// <exception cref="System.ArgumentNullException">It is thrown if the spec is null.</exception>
+        /// <exception cref="ArgumentNullException">It is thrown if the spec is null.</exception>
         /// <returns>A <see cref="TEntity"/> reference to found entity or null value if that does not exist.</returns>
         Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> spec, CancellationToken cancellationToken = default);
 
@@ -106,14 +87,5 @@ namespace TryCatch.Patterns.Repositories
         /// <exception cref="ArgumentNullException">It is thrown if the entity is null.</exception>
         /// <returns>A <see cref="Task{bool}"/> representing the asynchronous operation with a success flag.</returns>
         Task<bool> UpdateAsync(TEntity entity, CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Updates the list of entities on the repository.
-        /// </summary>
-        /// <param name="entities">A <see cref="IEnumerable{TEntity}"/> reference to the list of <see cref="TEntity"/>.</param>
-        /// <param name="cancellationToken">A <see cref="CancellationToken"/> reference to the cancellation token.</param>
-        /// <exception cref="ArgumentNullException">It is thrown if the entities collection is null.</exception>
-        /// <returns>A <see cref="Task{bool}"/> representing the asynchronous operation with a success flag.</returns>
-        Task<bool> UpdateAsync(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default);
     }
 }

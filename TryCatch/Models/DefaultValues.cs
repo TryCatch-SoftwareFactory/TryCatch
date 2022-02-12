@@ -5,6 +5,9 @@
 
 namespace TryCatch.Models
 {
+    /// <summary>
+    /// Common constant values for paging queries.
+    /// </summary>
     public static class DefaultValues
     {
         public const string SortAsAscending = "ASC";

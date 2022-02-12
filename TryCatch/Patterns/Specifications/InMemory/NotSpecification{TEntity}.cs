@@ -14,7 +14,6 @@ namespace TryCatch.Patterns.Specifications.InMemory
     /// </summary>
     /// <typeparam name="TEntity">Entity type used on specifications over that queries to run.</typeparam>
     public sealed class NotSpecification<TEntity> : CompositeSpecification<TEntity>
-        where TEntity : class
     {
         private readonly ISpecification<TEntity> other;
 

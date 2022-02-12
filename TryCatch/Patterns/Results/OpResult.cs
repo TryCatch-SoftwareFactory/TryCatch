@@ -10,7 +10,7 @@ namespace TryCatch.Patterns.Results
     /// <summary>
     /// Representation of the one common operation result.
     /// </summary>
-    public class OpResult
+    public sealed class OpResult
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="OpResult"/> class.

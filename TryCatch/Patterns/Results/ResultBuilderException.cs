@@ -10,7 +10,7 @@ namespace TryCatch.Patterns.Results
     /// <summary>
     /// Represents errors that occur when build or create a Result instance.
     /// </summary>
-    public class ResultBuilderException : Exception
+    public sealed class ResultBuilderException : Exception
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ResultBuilderException"/> class.
