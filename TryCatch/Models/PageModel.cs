@@ -12,7 +12,7 @@ namespace TryCatch.Models
     /// <summary>
     /// Represents a standard model for paging queries.
     /// </summary>
-    public sealed class PageModel
+    public class PageModel
     {
         private readonly string[] sortAsValidValues = new[]
         {
@@ -25,25 +25,16 @@ namespace TryCatch.Models
         /// <summary>
         /// Initializes a new instance of the <see cref="PageModel"/> class.
         /// </summary>
-        public PageModel()
-        {
-            this.Offset = DefaultValues.DefaultOffset;
-            this.Limit = DefaultValues.DefaultPageLimit;
-            this.SortAs = DefaultValues.SortAsAscending;
-            this.sortAsAscendingByDefault = true;
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PageModel"/> class.
-        /// </summary>
         /// <param name="limit">Sets the limit value - page size - for the query.</param>
         /// <param name="offset">Sets the offset value, where the query must be started.</param>
+        /// <param name="quickSearch">Sets the value of search criteria.</param>
         /// <param name="orderBy">Sets the field to be used to sort the query results.</param>
         /// <param name="sortAs">Sets the sort mode as ascending or descending. Only accepts ASC or DESC values.</param>
         /// <param name="sortAsAscendingByDefault">Sets the default sort mode as ascending. It is used when the sortAs value is invalid or is not set.</param>
         public PageModel(
             int limit = DefaultValues.DefaultPageLimit,
             int offset = DefaultValues.DefaultOffset,
+            string quickSearch = "",
             string orderBy = "",
             string sortAs = DefaultValues.SortAsAscending,
             bool sortAsAscendingByDefault = true)
@@ -51,6 +42,7 @@ namespace TryCatch.Models
             this.Limit = limit;
             this.Offset = offset;
             this.OrderBy = orderBy;
+            this.QuickSearch = quickSearch;
             this.SortAs = sortAs;
             this.sortAsAscendingByDefault = sortAsAscendingByDefault;
         }
@@ -64,6 +56,11 @@ namespace TryCatch.Models
         /// Gets the offset to be applied in the query.
         /// </summary>
         public int Offset { get; }
+
+        /// <summary>
+        /// Gets the value of quick search criteria.
+        /// </summary>
+        public string QuickSearch { get; }
 
         /// <summary>
         /// Gets the field name used as sort criteria.
