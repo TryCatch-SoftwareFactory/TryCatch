@@ -3,6 +3,11 @@
 [![Deploy](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/deploy-main.yml/badge.svg)](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/deploy-main.yml)  [![PullRequest](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/pull-request.yml/badge.svg)](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/pull-request.yml) 
 [![Unit Test](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/unit-test.yml/badge.svg)](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/unit-test.yml)
 
+[![CodeQL](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/codeql-analysis.yml)
+[![NuGet Badge](https://buildstats.info/nuget/TryCatch)](https://www.nuget.org/packages/TryCatch/)
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/trycatch-github/d329d88d2223613ccf3f9ec704d707b5/raw/trycatch-code-coverage.json)
+
+
 Cross-cutting components library.
 
 ## Goals
