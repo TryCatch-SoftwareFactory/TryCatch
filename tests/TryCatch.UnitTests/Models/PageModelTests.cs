@@ -33,15 +33,17 @@ namespace TryCatch.UnitTests.Models
             var limit = 100;
             var offset = 10;
             var orderBy = "Id";
+            var quickSearch = "Name";
             var sortAs = DefaultValues.SortAsDescending;
 
             // Act
-            var actual = new PageModel(limit, offset, orderBy, sortAs);
+            var actual = new PageModel(limit, offset, quickSearch, orderBy, sortAs);
 
             // Asserts
             actual.Limit.Should().Be(limit);
             actual.Offset.Should().Be(offset);
             actual.OrderBy.Should().Be(orderBy);
+            actual.QuickSearch.Should().Be(quickSearch);
             actual.SortAs.Should().Be(sortAs);
             actual.SortAsAscending().Should().BeFalse();
         }

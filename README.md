@@ -3,6 +3,11 @@
 [![Deploy](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/deploy-main.yml/badge.svg)](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/deploy-main.yml)  [![PullRequest](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/pull-request.yml/badge.svg)](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/pull-request.yml) 
 [![Unit Test](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/unit-test.yml/badge.svg)](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/unit-test.yml)
 
+[![CodeQL](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/codeql-analysis.yml/badge.svg?branch=main)](https://github.com/TryCatch-SoftwareFactory/TryCatch/actions/workflows/codeql-analysis.yml)
+[![NuGet Badge](https://buildstats.info/nuget/TryCatch)](https://www.nuget.org/packages/TryCatch/)
+![badge](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/trycatch-github/d329d88d2223613ccf3f9ec704d707b5/raw/trycatch-code-coverage.json)
+
+
 Cross-cutting components library.
 
 ## Goals
@@ -22,9 +27,10 @@ $ dotnet test
 ```
 
 ## Built With
-- FluentAssertions
-- NSubstitute
-- StyleCop
+- [Fluent Assertions](https://fluentassertions.com/)
+- [NSubstitute](https://nsubstitute.github.io/)
+- [StyleCop Analyzers](https://github.com/DotNetAnalyzers/StyleCopAnalyzers)
+- [Coverlet](https://github.com/coverlet-coverage/coverlet)
 
 ## Nuget
 This library is available as a nuget package https://www.nuget.org/packages/TryCatch/
@@ -33,10 +39,16 @@ This library is available as a nuget package https://www.nuget.org/packages/TryC
 [TBD]
 
 ## Contributions
-If you want to contribute to this project just create a pull request. But only pull requests which are matching the code style of this library will be accepted. Before creating a pull request please have a look at the library to get an overview of the required style.
+If you want to contribute to this project just create a pull request. But only pull requests which are matching the code style of this library will be accepted. Before creating a pull request please have a look at the library to get an overview of the required style. Please, refer to our document about the [contributing](CONTRIBUTING.md)
 
 ## Code of conduct
-Please, refer to our document about the [code of conduct](CODE-OF-CONDUCT.md)
+Please, refer to our document about the [code of conduct](CODE_OF_CONDUCT.md)
+
+## Security Policy
+Please, refer to our document about the [security policy](SECURITY.md)
+
+## Support
+Please, refer to our document about the [support policy](SUPPORT.md)
 
 ## License
 MIT License
