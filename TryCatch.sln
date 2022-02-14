@@ -7,9 +7,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4EBAE3FF-9D4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3C5C8BE1-5F40-45E1-9981-112F50F10C14}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryCatch", "TryCatch\TryCatch.csproj", "{E759ECB5-A392-4BFD-9A43-E7B7116BC0C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryCatch", "src\TryCatch\TryCatch.csproj", "{E759ECB5-A392-4BFD-9A43-E7B7116BC0C6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryCatch.UnitTests", "TryCatch.UnitTests\TryCatch.UnitTests.csproj", "{22AE706C-8315-44DA-BD5A-CC479A01B0AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryCatch.UnitTests", "tests\TryCatch.UnitTests\TryCatch.UnitTests.csproj", "{22AE706C-8315-44DA-BD5A-CC479A01B0AD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

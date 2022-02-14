@@ -22,9 +22,10 @@ $ dotnet test
 ```
 
 ## Built With
-- FluentAssertions
-- NSubstitute
-- StyleCop
+- [Fluent Assertions](https://fluentassertions.com/)
+- [NSubstitute](https://nsubstitute.github.io/)
+- [StyleCop Analyzers](https://github.com/DotNetAnalyzers/StyleCopAnalyzers)
+- [Coverlet](https://github.com/coverlet-coverage/coverlet)
 
 ## Nuget
 This library is available as a nuget package https://www.nuget.org/packages/TryCatch/
@@ -33,10 +34,16 @@ This library is available as a nuget package https://www.nuget.org/packages/TryC
 [TBD]
 
 ## Contributions
-If you want to contribute to this project just create a pull request. But only pull requests which are matching the code style of this library will be accepted. Before creating a pull request please have a look at the library to get an overview of the required style.
+If you want to contribute to this project just create a pull request. But only pull requests which are matching the code style of this library will be accepted. Before creating a pull request please have a look at the library to get an overview of the required style. Please, refer to our document about the [contributing](CONTRIBUTING.md)
 
 ## Code of conduct
-Please, refer to our document about the [code of conduct](CODE-OF-CONDUCT.md)
+Please, refer to our document about the [code of conduct](CODE_OF_CONDUCT.md)
+
+## Security Policy
+Please, refer to our document about the [security policy](SECURITY.md)
+
+## Support
+Please, refer to our document about the [support policy](SUPPORT.md)
 
 ## License
 MIT License
